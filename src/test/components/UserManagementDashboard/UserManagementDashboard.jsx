@@ -3,43 +3,59 @@ import "./UserManagementDashboard.css";
 import { Button } from "primereact/button";
 import "primereact/resources/themes/lara-light-blue/theme.css";
 import "primeicons/primeicons.css";
-import { ManageAccounts, AdminPanelSettings, School } from "@mui/icons-material";
+import { useNavigate } from 'react-router-dom'; /* Import useNavigate */
 
 const UserManagementDashboard = () => {
-  return (
-    <div className="card">
-      <h2>What would you like to do?</h2>
+    const navigate = useNavigate();
 
-      <Button
-        label="Account Registration"
-        icon={<span style={{ display: "flex", alignItems: "center", marginRight: "8px"}}><ManageAccounts/></span>}
-        outlined
-        badge="2"
-        badgeClassName="p-badge-danger"
-        sx={{ mt: 2 }}
-        style={{ marginLeft: "10px" }}
-      />
+    return (
+        <div className="card">
+            <h1 className="header">User Management</h1>
 
-      <Button
-        label="Role-Based Access Control"
-        icon={<span style={{ display: "flex", alignItems: "center", marginRight: "8px"}}><AdminPanelSettings/></span>}
-        outlined
-        badge="2"
-        badgeClassName="p-badge-danger"
-        sx={{ mt: 2 }}
-        style={{ marginLeft: "10px" }}
-      />
+            <Button
+                label="Subscription Management"
+                icon="pi pi-key"
+                aria-label="Bookmark"
+                size="large"
+                badge="2"
+                badgeClassName="p-badge-danger"
+                style={{ marginLeft: "10px" }}
+                onClick={() => navigate('/SubscriptionManagement/Subscription')}
+            />
 
-      <Button
-        label="Enrolment"
-        icon={<span style={{ display: "flex", alignItems: "center", marginRight: "8px"}}><School/></span>}
-        outlined
-        badge="2"
-        badgeClassName="p-badge-danger"
-        style={{ marginLeft: "10px" }}
-      />
-    </div>
-  );
+            <Button
+                label="Account Registration"
+                icon="pi pi-user-plus"
+                aria-label="Bookmark"
+                size="large"
+                badge="2"
+                badgeClassName="p-badge-danger"
+                style={{ marginLeft: "10px" }}
+                onClick={() => navigate("/account-registration")}
+            />
+
+            <Button
+                label="Enrolment"
+                icon="pi pi-check"
+                aria-label="Bookmark"
+                size="large"
+                badge="2"
+                badgeClassName="p-badge-danger"
+                style={{ marginLeft: "10px" }}
+                onClick={() => navigate("/Enrolment/Enrolment")}  // Navigate to Enrolment Page
+            />
+            <Button
+                label="User Settings"
+                icon="pi pi-cog"
+                aria-label="Bookmark"
+                size="large"
+                badge="2"
+                badgeClassName="p-badge-danger"
+                style={{ marginLeft: "10px" }}
+                onClick={() => navigate("/UserSettings/UserSettings")}  // Navigate to Enrolment Page
+            />
+        </div>
+    );
 };
 
 export default UserManagementDashboard;
