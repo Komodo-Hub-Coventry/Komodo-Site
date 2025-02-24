@@ -72,7 +72,7 @@ function KomodoSignUpTest() {
         <div className="align-items-center">
             <Card title="Sign Up" className="p-4 shadow-3" style={{width: "600px", margin:"50px", border: "2px solid grey"}}>
                     <img
-                        src="src/assets/CoventryKomodo.png"
+                        src="src/Pre/assets/CoventryKomodo.png"
                         alt="Komodo Dragon"
                         style={{width: "100px", marginBottom: "20px"}}
                     />
