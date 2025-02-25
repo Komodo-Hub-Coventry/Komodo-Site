@@ -14,6 +14,7 @@ function KomodoSignUpTest() {
         email: "",
         password: "",
         fullname: "",
+        role: ""
     });
 
     const inputHdlChange = (event) => {
@@ -69,79 +70,178 @@ function KomodoSignUpTest() {
     };
 
     return (
-        <div className="align-items-center">
-            <Card title="Sign Up" className="p-4 shadow-3" style={{width: "600px", margin:"50px", border: "2px solid grey"}}>
+        <Card
+            header={
+                <div style={{
+                    width: "100%",
+                    margin: "0 auto",
+                    flex: 1,
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    fontWeight: 500,
+                    marginTop: "30px"
+                }}>
+                    <div style={{fontSize: "70px"}}>
+                        Create new Account
+                    </div>
+                    <div style={{
+                        fontSize: "24px",
+                        fontWeight: 400,
+                        marginTop: "10px"
+                    }}>
+                        Already Registered? Login
+                    </div>
+                </div>
+            }
+
+            style={{
+                width: "900px",
+                border: "5px solid #ececec",
+                borderRadius: "30px",
+                boxShadow: "none"
+            }}
+        >
+
+
+            <div style={{display: "flex", alignItems: "center"}}>
+                <div style={{
+                    flex: 1,
+                    display: "flex",
+                    justifyContent: "right",
+                    alignItems: "center",
+                    marginLeft: "60px"
+                }}>
                     <img
                         src="src/Pre/assets/CoventryKomodo.png"
                         alt="Komodo Dragon"
-                        style={{width: "100px", marginBottom: "20px"}}
+                        style={{width: "225px"}}
                     />
-                <form onSubmit={preventHdlReload} className="p-fluid">
-                    <div className="p-field">
-                        <label>Email</label>
-                        <InputText
-                            name="email"
-                            type="email"
-                            value={formData.email}
-                            onChange={inputHdlChange}
-                            required
-                            className="p-inputtext-lg"
+                </div>
+                <div style={{flex: 2, marginLeft: "40px", marginRight: "100px"}}>
+                    <form onSubmit={preventHdlReload} className="p-fluid">
+
+                        <div className="p-field">
+                            <label>FULL NAME</label>
+                            <InputText
+                                name="fullname"
+                                type="text"
+                                value={formData.fullname}
+                                onChange={inputHdlChange}
+                                required
+                                className="p-inputtext-lg"
+                                style={{
+                                    marginBottom: "10px",
+                                    backgroundColor: "#f0f0f0",
+                                    border: "none"
+                                }}
+                            />
+                        </div>
+                        <div className="p-field">
+                            <label>EMAIL</label>
+                            <InputText
+                                name="email"
+                                type="email"
+                                value={formData.email}
+                                onChange={inputHdlChange}
+                                required
+                                className="p-inputtext-lg"
+                                style={{
+                                    marginBottom: "10px",
+                                    backgroundColor: "#f0f0f0",
+                                    border: "none"
+                                }}
+                            />
+                        </div>
+
+
+                        <Divider/>
+
+                        <div className="p-field">
+                            <label>PASSWORD</label>
+                            <Password
+                                value={formData.password}
+                                onChange={(event) => pwdHdlChange(event.target.value)}
+                                toggleMask
+                                feedback
+                                header="Pick a strong password"
+                                style={{
+                                    marginBottom: "10px",
+                                    backgroundColor: "#f0f0f0",
+                                    border: "none"
+                                }}
+                                footer={
+                                    <small className="text-sm">
+                                        Use at least 8 characters with numbers &amp; special symbols.
+                                    </small>
+                                }
+                            />
+                        </div>
+                        <div className="p-field">
+                            <label>CONFIRM PASSWORD</label>
+                            <Password
+                                value={formData.password}
+                                onChange={(event) => pwdHdlChange(event.target.value)}
+                                toggleMask
+                                feedback
+                                header="Pick a strong password"
+                                style={{
+                                    marginBottom: "10px",
+                                    backgroundColor: "#f0f0f0",
+                                    border: "none"
+                                }}
+                                footer={
+                                    <small className="text-sm">
+                                        Use at least 8 characters with numbers &amp; special symbols.
+                                    </small>
+                                }
+                            />
+                        </div>
+
+                        <Divider/>
+
+                        <div className="p-field">
+                            <label>ROLE SELECTION</label>
+                            <InputText
+                                name="role"
+                                type="text"
+                                value={formData.role}
+                                onChange={inputHdlChange}
+                                required
+                                className="p-inputtext-lg"
+                                style={{
+                                    marginBottom: "10px",
+                                    backgroundColor: "#f0f0f0",
+                                    border: "none"
+                                }}
+                            />
+                        </div>
+
+
+                        <Button
+                            type="submit"
+                            label="Sign up"
+                            className="p-button-lg"
+                            style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                width: "30%",
+                                margin: "0 auto",
+                                marginTop: "20px",
+                                backgroundColor: "#535353",
+
+                                border: "none"
+                            }}
                         />
-                    </div>
 
-                    <div className="p-field">
-                        <label>Username</label>
-                        <InputText
-                            name="username"
-                            type="username"
-                            value={formData.username}
-                            onChange={inputHdlChange}
-                            required
-                            className="p-inputtext-lg"
-
-                        />
-                    </div>
-
-                    <div className="p-field">
-                        <label>Full Name</label>
-                        <InputText
-                            name="fullname"
-                            type="text"
-                            value={formData.fullname}
-                            onChange={inputHdlChange}
-                            required
-                            className="p-inputtext-lg"
-                        />
-                    </div>
-
-                    <div className="p-inputtext-lg">
-                        <label>Password</label>
-                        <Password
-                            value={formData.password}
-                            onChange={(event) => pwdHdlChange(event.target.value)}
-                            toggleMask
-                            feedback
-                            header="Pick a strong password"
-                            footer={
-                                <small className="text-sm">
-                                    Use at least 8 characters with numbers & special symbols.
-                                </small>
-                            }
-                        />
-                    </div>
-
-                    <Divider/>
-
-                    <Button
-                        type="submit"
-                        label="Register"
-                        icon="pi pi-user-plus"
-                        className="p-button-lg w-full"
-                    />
-                </form>
-            </Card>
-        </div>
-    );
+                    </form>
+                </div>
+            </div>
+        </Card>
+    )
+        ;
 }
 
 export default KomodoSignUpTest;
