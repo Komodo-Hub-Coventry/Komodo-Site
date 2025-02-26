@@ -1,13 +1,13 @@
+import React from 'react';
+import MainLayout from './MainLayout';
+import ModulesPage from './ModulesPage';
 
-import React from "react";
-import SignUpForm from "./komodoSignUpTest.jsx";
-
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <SignUpForm />
-    </div>
+    <MainLayout>
+      <ModulesPage />
+    </MainLayout>
   );
-}
+};
 
 export default App;
