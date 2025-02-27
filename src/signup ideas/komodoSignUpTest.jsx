@@ -114,7 +114,7 @@ function KomodoSignUpTest() {
                     marginLeft: "60px"
                 }}>
                     <img
-                        src="src/test/assets/CoventryKomodo.png"
+                        src="CoventryKomodo.png"
                         alt="Komodo Dragon"
                         style={{width: "225px"}}
                     />
