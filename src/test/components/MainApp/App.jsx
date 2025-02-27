@@ -5,12 +5,11 @@ import ModulesPage from '../ModulesPage/ModulesPage.jsx';
 const App = () => {
 
 
-
-  return (
-    <MainLayout>
-      <ModulesPage />
-    </MainLayout>
-  );
+    return (
+        <MainLayout>
+            <ModulesPage/>
+        </MainLayout>
+    );
 };
 
 export default App;
