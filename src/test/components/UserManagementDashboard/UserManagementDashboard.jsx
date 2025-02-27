@@ -1,14 +1,20 @@
 import React from 'react';
 import './UserManagementDashboard.css';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
 
 const UserManagementDashboard = () => {
     const modules = [
-        {id: 1, name: 'Module 1', icon: '📚'},
+        {id: 1, name: 'User Creation', icon: '📚'},
         {id: 2, name: 'Module 2', icon: '🛠️'},
         {id: 3, name: 'Module 3', icon: '📊'},
         {id: 4, name: 'Module 4', icon: '⚙️'},
         {id: 5, name: 'Module 5', icon: '📖'},
         {id: 6, name: 'Module 6', icon: '📗'},
+
     ];
 
     return (
@@ -24,7 +30,8 @@ const UserManagementDashboard = () => {
                         <span className="module-icon">{module.icon}</span>
                         <p className="module-name">{module.name}</p>
                     </div>
-                ))}
+
+                    ))}
             </div>
         </div>
     );
