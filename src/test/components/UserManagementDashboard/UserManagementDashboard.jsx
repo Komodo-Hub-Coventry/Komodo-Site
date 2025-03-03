@@ -1,40 +1,45 @@
-import React from 'react';
-import './UserManagementDashboard.css';
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
+import React from "react";
+import "./UserManagementDashboard.css";
+import { Button } from "primereact/button";
+import "primereact/resources/themes/lara-light-blue/theme.css";
+import "primeicons/primeicons.css";
+import { ManageAccounts, AdminPanelSettings, School } from "@mui/icons-material";
 
+const App = () => {
+  return (
+    <div className="card">
+      <h2>What would you like to do?</h2>
 
-const UserManagementDashboard = () => {
-    const modules = [
-        {id: 1, name: 'User Creation', icon: '📚'},
-        {id: 2, name: 'Module 2', icon: '🛠️'},
-        {id: 3, name: 'Module 3', icon: '📊'},
-        {id: 4, name: 'Module 4', icon: '⚙️'},
-        {id: 5, name: 'Module 5', icon: '📖'},
-        {id: 6, name: 'Module 6', icon: '📗'},
+      <Button
+        label="Account Registration"
+        icon={<span style={{ display: "flex", alignItems: "center", marginRight: "8px"}}><ManageAccounts/></span>}
+        outlined
+        badge="2"
+        badgeClassName="p-badge-danger"
+        sx={{ mt: 2 }}
+        style={{ marginLeft: "10px" }}
+      />
 
-    ];
+      <Button
+        label="Role-Based Access Control"
+        icon={<span style={{ display: "flex", alignItems: "center", marginRight: "8px"}}><AdminPanelSettings/></span>}
+        outlined
+        badge="2"
+        badgeClassName="p-badge-danger"
+        sx={{ mt: 2 }}
+        style={{ marginLeft: "10px" }}
+      />
 
-    return (
-        <div className="modules-container">
-            <h1 className="modules-title">Select a Module</h1>
-            <div className="modules-grid">
-                {modules.map((module) => (
-                    <div
-                        key={module.id}
-                        className="module-card"
-                        onClick={() => alert(`Navigating to ${module.name}`)}
-                    >
-                        <span className="module-icon">{module.icon}</span>
-                        <p className="module-name">{module.name}</p>
-                    </div>
-
-                    ))}
-            </div>
-        </div>
-    );
+      <Button
+        label="Enrolment"
+        icon={<span style={{ display: "flex", alignItems: "center", marginRight: "8px"}}><School/></span>}
+        outlined
+        badge="2"
+        badgeClassName="p-badge-danger"
+        style={{ marginLeft: "10px" }}
+      />
+    </div>
+  );
 };
 
-export default UserManagementDashboard;
+export default App;

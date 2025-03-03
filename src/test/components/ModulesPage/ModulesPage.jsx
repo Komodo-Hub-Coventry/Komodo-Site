@@ -1,12 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; /* Import useNavigate */
 import './ModulesPage.css';
-import HistoryImage from './assets/images/History.jpg'; 
-import MathsImage from './assets/images/Maths.jpg';
-import ScienceImage from './assets/images/Science.webp';
-import GeographyImage from './assets/images/Geo.avif';
-import EnglishImage from './assets/images/English.jpg';
-import CSImage from './assets/images/CS.webp';
+import HistoryImage from '../assets/images/History.jpg';
+import MathsImage from '../assets/images/Maths.webp';
+import ScienceImage from '../assets/images/Science.jpg';
+import GeographyImage from '../assets/images/Geo.jpg';
+import EnglishImage from '../assets/images/English.jpg';
+import CSImage from '../assets/images/CS.jpg';
+
 
 const ModulesPage = () => {
   const navigate = useNavigate(); /* Initializing useNavigate */
