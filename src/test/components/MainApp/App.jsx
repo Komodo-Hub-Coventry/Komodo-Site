@@ -7,7 +7,7 @@ const App = () => {
 
     return (
        <MainLayout>
-      <ModulesPage />
+      <ModulesPages />
     </MainLayout>
     );
 };
