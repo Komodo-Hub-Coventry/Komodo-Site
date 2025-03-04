@@ -6,11 +6,9 @@ const App = () => {
 
 
     return (
-        <MainLayout>
-
-            <UserManagementDashboard/>
-
-        </MainLayout>
+       <MainLayout>
+      <ModulesPage />
+    </MainLayout>
     );
 };
 
