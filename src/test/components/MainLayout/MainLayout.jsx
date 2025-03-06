@@ -43,6 +43,9 @@ const MainLayout = ({ children }) => {
           <a href="#modules" className="nav-item">
             <i className="pi pi-book" style={{ fontSize: '1.60rem' }}></i>
           </a>
+          <a href="#library" className="nav-item">
+            <i className= "pi-graduation-cap" style={{ fontSize: '1.60rem'}}></i>
+          </a>
         </nav>
 
         {/* Help Icon at the Bottom */}
