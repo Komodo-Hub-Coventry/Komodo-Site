@@ -19,7 +19,7 @@ const MathsPage = () => {
   return (
     <div className="maths-page">
       <h1>Maths Module</h1>
-      <p>Welcome to the Maths module heloooooo! Here you'll find all the study materials for each week.</p>
+      <p>Welcome to the Maths module! Here you'll find all the study materials for each week!</p>
 
       {/* Accordion for Weeks */}
       <div className="weeks-accordion">
