@@ -1,12 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; /* Import useNavigate */
-import './ModulesPage.css';
-import HistoryImage from '/src/test/components/assets/images/History.jpg'; 
-import MathsImage from '/src/test/components/assets/images/Maths.jpg';
-import ScienceImage from '/src/test/components/assets/images/Science.webp';
-import GeographyImage from '/src/test/components/assets/images/Geo.avif';
-import EnglishImage from '/src/test/components/assets/images/English.jpg';
-import CSImage from '/src/test/components/assets/images/CS.webp';
+import '/src/test/components/ModulesPages/ModulesPage.css';
+import HistoryImage from '/src/test/components/ModulesPages/assets/images/History.jpg'; 
+import MathsImage from '/src/test/components/ModulesPages/assets/images/Maths.jpg';
+import ScienceImage from '/src/test/components/ModulesPages/assets/images/Science.webp';
+import GeographyImage from '/src/test/components/ModulesPages/assets/images/Geo.avif';
+import EnglishImage from '/src/test/components/ModulesPages/assets/images/English.jpg';
+import CSImage from '/src/test/components/ModulesPages/assets/images/CS.webp';
+
+
 
 const ModulesPage = () => {
   const navigate = useNavigate(); /* Initializing useNavigate */
