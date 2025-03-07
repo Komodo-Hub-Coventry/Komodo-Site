@@ -1,13 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; /* Import useNavigate */
 import './ModulesPage.css';
-import HistoryImage from '../assets/images/History.jpg';
-import MathsImage from '../assets/images/Maths.webp';
-import ScienceImage from '../assets/images/Science.jpg';
-import GeographyImage from '../assets/images/Geo.jpg';
-import EnglishImage from '../assets/images/English.jpg';
-import CSImage from '../assets/images/CS.jpg';
-
+import HistoryImage from '/src/test/components/assets/images/History.jpg'; 
+import MathsImage from '/src/test/components/assets/images/Maths.jpg';
+import ScienceImage from '/src/test/components/assets/images/Science.webp';
+import GeographyImage from '/src/test/components/assets/images/Geo.avif';
+import EnglishImage from '/src/test/components/assets/images/English.jpg';
+import CSImage from '/src/test/components/assets/images/CS.webp';
 
 const ModulesPage = () => {
   const navigate = useNavigate(); /* Initializing useNavigate */
@@ -40,4 +39,4 @@ const ModulesPage = () => {
   );
 };
 
-export default ModulesPage;
+export default ModulesPage; 

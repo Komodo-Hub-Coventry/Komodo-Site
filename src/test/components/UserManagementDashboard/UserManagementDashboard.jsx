@@ -5,7 +5,7 @@ import "primereact/resources/themes/lara-light-blue/theme.css";
 import "primeicons/primeicons.css";
 import { ManageAccounts, AdminPanelSettings, School } from "@mui/icons-material";
 
-const App = () => {
+const UserManagementDashboard = () => {
   return (
     <div className="card">
       <h2>What would you like to do?</h2>
@@ -42,4 +42,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default UserManagementDashboard;
