@@ -57,7 +57,7 @@ const ProfileSettings = ({ closeModal, saveChanges }) => {
       <label>Name:</label>
       <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
 
-      {/* Email (Read-only) */}
+      {/* Email  */}
       <label>Email:</label>
       <input type="email" value={email} readOnly className="readonly-input" />
 
@@ -66,7 +66,7 @@ const ProfileSettings = ({ closeModal, saveChanges }) => {
       <textarea value={bio} onChange={(e) => setBio(e.target.value)} />
 
       {/* Save Button */}
-      <button className="save-btn" onClick={handleSave}>Save changes</button>
+      <button className="save-button" onClick={handleSave}>Save changes</button>
     </div>
   );
 };

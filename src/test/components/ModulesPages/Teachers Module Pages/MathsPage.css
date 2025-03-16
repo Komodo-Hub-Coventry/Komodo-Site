@@ -1,0 +1,434 @@
+/* =======================================
+   GLOBAL VARIABLES & BASE STYLES
+======================================= */
+:root {
+  --primary-color: #56bbf1;
+  --primary-light: #78d0fe;
+  --secondary-color: #007bff;
+  --bg-light: #f2f6fa;
+  --text-dark: #333;
+  --border-light: #ddd;
+}
+
+/* Overall Page Container */
+.maths-page {
+  max-width: 1100px;
+  margin: 40px auto;
+  background-color: var(--bg-light);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.maths-page h1 {
+  font-size: 36px;
+  color: var(--primary-color);
+  font-weight: 400;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.maths-page p {
+  font-size: 18px;
+  color: var(--text-dark);
+  margin-bottom: 30px;
+}
+
+/* =======================================
+   WEEKS ACCORDION (WEEK 1..5)
+======================================= */
+.weeks-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.week-section {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.week-section:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Week Header */
+.week-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: linear-gradient(90deg, var(--primary-light) 0%, var(--primary-color) 100%);
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.week-header:hover {
+  filter: brightness(0.95);
+}
+
+.week-header h2 {
+  font-size: 24px;
+  color: #fff;
+  margin: 0;
+}
+
+.week-header span {
+  font-size: 20px;
+  color: #fff;
+  transition: transform 0.2s;
+}
+
+/* Week Content */
+.week-content {
+  padding: 15px 20px;
+  background-color: #f9f9f9;
+}
+
+.week-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual Item within a Week */
+.material-item {
+  background-color: #fff;
+  margin-bottom: 10px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 10px;
+  transition: transform 0.2s ease;
+}
+
+.material-item:hover {
+  transform: translateY(-2px);
+}
+
+/* Clickable header for each item (sub-dropdown) */
+.item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  cursor: pointer;
+  padding: 6px 0;
+}
+
+.item-header span {
+  font-size: 16px;
+  color: var(--text-dark);
+}
+
+/* Sub-dropdown content: the files list, "Add Files" button, etc. */
+.item-content {
+  position: relative;
+  margin: 10px auto;
+  background-color: #f9f9f9;
+  padding: 40px 10px 10px;
+  border-radius: 4px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* "Add Files" button pinned to top-right */
+.top-right-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin-right: 0;
+}
+
+.files-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+  width: 100%;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0;
+}
+
+.file-item a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.file-item a:hover {
+  text-decoration: underline;
+}
+
+/* Add New Item container */
+.add-item-container {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.add-item-input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* =======================================
+   BUTTONS (Add Files, Delete, Add Item, Post)
+======================================= */
+.upload-button,
+.delete-button,
+.add-item-button,
+.post-button {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/* "Add Files" (top-right) */
+.upload-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 6px 12px;
+  margin-right: 10px;
+}
+
+.upload-button:hover {
+  background-color: #4aa7d6;
+}
+
+/* "Delete" (removes file or entire item) */
+.delete-button {
+  background-color: #ff5c5c;
+  color: #fff;
+  padding: 6px 12px;
+}
+
+.delete-button:hover {
+  background-color: #e14b4b;
+}
+
+/* "+ Add Item" */
+.add-item-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 8px 12px;
+}
+
+.add-item-button:hover {
+  background-color: #4aa7d6;
+}
+
+/* "Post" button (Announcements/Assignments) */
+.post-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 8px 16px;
+  margin-top: 10px;
+}
+
+.post-button:hover {
+  background-color: #4aa7d6;
+}
+
+/* =======================================
+   CONTAINER LAYOUT (Game, Announcements, Assignments)
+======================================= */
+.container-layout {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+/* Interactive Math Game Container */
+.interactive-game-container {
+  flex: 0 0 300px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(0,0,0,0.1) 0px 4px 6px;
+  height: 600px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.interactive-game-container h2 {
+  font-size: 24px;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.interactive-game-container iframe {
+  width: 100%;
+  flex: 1;
+  border: none;
+  border-radius: 10px;
+}
+
+/* =======================================
+   ANNOUNCEMENTS & ASSIGNMENTS
+======================================= */
+.announcements-container,
+.assignments-container {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: rgba(0,0,0,0.1) 0px 4px 30px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Enhanced Headings with Underline Bar */
+.announcements-container h2,
+.assignments-container h2 {
+  position: relative;
+  font-size: 24px;
+  color: var(--primary-color);
+  margin-bottom: 0;
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+.announcements-container h2::after,
+.assignments-container h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+}
+
+.announcements-list,
+.assignments-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Each "card" for announcements or assignments */
+.announcement-item,
+.assignment-item {
+  background-color: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 10px 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  animation: fadeIn 0.3s ease; /* subtle entry animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.announcement-item p,
+.assignment-item p {
+  margin: 0 0 6px 0;
+  line-height: 1.4;
+  color: var(--text-dark);
+}
+
+.announcement-item a,
+.assignment-item a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  word-wrap: break-word;
+}
+
+.announcement-item a:hover,
+.assignment-item a:hover {
+  text-decoration: underline;
+}
+
+/* =======================================
+   FORMS FOR POSTING ANNOUNCEMENTS AND ASSIGNMENTS
+   (Compact, single-column layout)
+======================================= */
+.announcement-form,
+.assignment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.announcement-form textarea,
+.assignment-form textarea {
+  min-height: 60px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: 'Poppins', sans-serif;
+  transition: border-color 0.2s ease;
+}
+
+.announcement-form textarea:focus,
+.assignment-form textarea:focus {
+  border-color: var(--primary-color);
+}
+
+.announcement-form input[type="file"],
+.assignment-form input[type="file"] {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+}
+
+/* "Post" button aligned to bottom-right */
+.announcement-form .post-button,
+.assignment-form .post-button {
+  align-self: flex-end;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 6px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.announcement-form .post-button:hover,
+.assignment-form .post-button:hover {
+  background-color: #4aa7d6;
+}
