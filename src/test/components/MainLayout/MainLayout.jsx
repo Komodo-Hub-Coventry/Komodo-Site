@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './MainLayout.css';
 import 'primeicons/primeicons.css';
+
+import React, { useState } from 'react';
+
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const MainLayout = ({ children }) => {
   const [avatar, setAvatar] = useState(null);
@@ -14,6 +16,7 @@ const MainLayout = ({ children }) => {
       setAvatar(imageUrl);
     }
   };
+
 
   const openProfileModal = () => setIsProfileModalOpen(true); // Function to open the modal
   const closeProfileModal = () => setIsProfileModalOpen(false); // Function to close the modal
@@ -61,7 +64,14 @@ const MainLayout = ({ children }) => {
             <i className="pi pi-desktop" style={{ fontSize: '1.60rem' }}></i>
           </Link>
         </nav>
-
+        
+       <Link to="/email" className="nav-item">
+            <i className="pi pi-envelope" style={{ fontSize: '1.60rem' }}></i>
+          </Link>
+          
+          <Link to="/code_generator" className="nav-item">
+            <i className="pi pi-key" style={{ fontSize: '1.60rem' }}></i>
+          </Link>
         {/* Help Icon at the Bottom */}
         <div className="bottom-icon">
           <Link to="/help" className="nav-item">

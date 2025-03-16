@@ -1,0 +1,140 @@
+/* Container Start */
+.container {
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 20px;
+    margin-top: 70px;
+    background: #FFF;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    text-align: center;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+/* Container End */
+
+/* Header Start */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 19px;
+    width: 100%;
+    gap: 20px; 
+}
+
+/* Header End */
+
+/* Text Start */
+.text {
+    color: #333;
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 10px; 
+}
+
+/* Text End */
+
+/* Underline Start */
+.underline {
+    background: #78d0fe;
+    border-radius: 10px;
+    height: 5px;
+    width: 55px;
+}
+
+/* Underline End */
+
+/* Input Section Start */
+.inputs {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Input Section End */
+
+/* Button Start */
+.submit {
+    background-color: #78d0fe;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
+}
+
+.submit:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.submit:hover {
+    background-color: #5599dd;
+}
+
+/* Button End */
+
+/* Code List Start */
+.code-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.code-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.copy-btn {
+    background-color: #78d0fe;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.copy-btn:hover {
+    background-color: #5599dd;
+}
+
+/* Code List End */
+
+.dashboard-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
