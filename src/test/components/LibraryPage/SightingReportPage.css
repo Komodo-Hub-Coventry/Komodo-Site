@@ -1,0 +1,44 @@
+.sighting-report-page {
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .sighting-report-page h1 {
+    color: #56bbf1;
+    margin-bottom: 20px;
+  }
+  
+  .reports-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  
+  .report-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .report-card h2{
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .report-card p {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  .report-contributor a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  .report-contributor a:hover {
+    text-decoration: underline;
+  }
+  
